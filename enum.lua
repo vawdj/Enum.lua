@@ -1,5 +1,5 @@
-local function Enum()
-    return setmetatable({ __count = 0, __previous = nil }, {
+return function()
+    return setmetatable({ __count = 0, __previous = 0 }, {
         __index = function(t, k)
             t.__count = t.__count + 1
             t.__previous = k
@@ -9,7 +9,7 @@ local function Enum()
         __call = function(t, n, ...)
             if n then
                 t.__count = n
-                rawset(t, t.__previous, n)
+                t.__previous = n
             end
             return t
         end
