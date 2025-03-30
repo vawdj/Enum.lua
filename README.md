@@ -14,6 +14,7 @@ The `Enum()` function creates a new enumeration object using Lua's metatables. E
 ## Basic Usage
 
 ```lua
+local Enum = require "enum.lua"
 -- Create a new enum
 local Colors = Enum()
     .RED    -- 1
