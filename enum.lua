@@ -9,9 +9,9 @@ return function()
         __call = function(t, n, ...)
             if n then
                 t.__count = n
-                t.__previous = n
+                rawset(t, t.__previous, n)
             end
             return t
-        end
+        end,
     })
 end
